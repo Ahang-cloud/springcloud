@@ -1,0 +1,30 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: cloud-feign-consumer
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/, http://eureka7002.com:7002/eureka/ # 入驻地址
+  instance:
+    instance-id: feignOrder80
+    prefer-ip-address: true
+
+cloud-provider-payment:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+# 设置 Openfeign 客户端超时时间，默认超时等待1秒
+ribbon:
+  ReadTimeout: 5000   # 指建立连接所用时间
+  ConnectTimeout: 5000    # 指建立连接后从服务器读取资源所用时间
+
+logging:
+  level:
+    # feign日志以什么级别监控哪个接口
+    com.ah.springcloud.service.FeignService: debug

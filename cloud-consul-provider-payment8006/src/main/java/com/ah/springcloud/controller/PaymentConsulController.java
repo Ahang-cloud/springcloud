@@ -13,7 +13,7 @@ public class PaymentConsulController {
 
     @Value("${server.port}")
     private String serverPort;
-    private String ddd;
+    private String abcs;
 
     @GetMapping("/payment/consul")
     public String paymentInfo(){

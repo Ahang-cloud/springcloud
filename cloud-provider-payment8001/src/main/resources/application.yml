@@ -30,4 +30,4 @@ mybatis:
   type-aliases-package: com.ah.springcloud.entities  # 所有Entity 别名类所在包
 
 info:
-  msg: "hello world"
+  msg: "hello"

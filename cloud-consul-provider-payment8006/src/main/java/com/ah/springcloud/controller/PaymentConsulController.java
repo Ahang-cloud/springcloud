@@ -14,6 +14,11 @@ public class PaymentConsulController {
     @Value("${server.port}")
     private String serverPort;
     private String abcs;
+    
+    @GetMapping("/payment/consul222")
+    public String paymentInfo222(){
+        return "springcloud with consul: "+ serverPort +"\t" + UUID.randomUUID().toString();
+    }
 
     @GetMapping("/payment/consul")
     public String paymentInfo(){
